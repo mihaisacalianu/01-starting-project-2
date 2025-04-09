@@ -1,11 +1,9 @@
-import Form from "./Form";
 
-export default function UserInput(){
+export default function UserInput({handleChange, inputName,inputType,defaultValue}){
   return(
-    <>
-    <div className="input-group">
-    <Form/>
-    </div>
-    </>
+    <form id="user-input">
+      <label htmlFor={inputName}>{inputName}</label>
+      <input type={inputType} name={inputName} onChange={handleChange} defaultValue={defaultValue}/>
+    </form>
   );
 }
