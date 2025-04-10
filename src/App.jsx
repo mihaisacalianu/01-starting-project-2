@@ -29,7 +29,14 @@ function App() {
   }
 
   function updateDurationValue(event) {
-    setDuration(()=>parseInt(event.target.value));
+    if(parseInt(event.target.value) > 0){
+      setDuration(()=>{
+        return parseInt(event.target.value)
+      });
+    }
+    else{
+      alert('Duration must be greater than zero!')
+    }
     updateTable()
   }
 
